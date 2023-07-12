@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django.core.mail.backends.console
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -38,7 +40,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     "accounts",
+    "pages" ,
+    "crispy_forms",
+    'crispy_bootstrap5',
+    'allauth',
+    'allauth.account',
 ]
+SITE_ID = 1
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -55,7 +64,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath("templates"))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,6 +114,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+AUTHENTICATION_BACKENDS = [
+
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+
+]
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 # Internationalization
@@ -132,5 +151,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #account
 
 AUTH_USER_MODEL = "accounts.CustomUser"
+
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
+
+#CRISPY
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
+
+#all auth
+#ACCOUNT_SESSION-REMEMBER == True
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_UNIQUE_EMAIL = True
+
 
 
