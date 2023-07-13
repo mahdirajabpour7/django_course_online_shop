@@ -9,6 +9,7 @@ class ProductListView(generic.ListView):
     template_name = "Products/Products_list.html"
     context_object_name = "Products"
 
+
 class ProductDetailVeiw(generic.DetailView):
     model = Products
     template_name = "Products/Products_detail.html"
