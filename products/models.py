@@ -2,15 +2,17 @@ from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
+from django.utils import timezone
 
 
 class Products(models.Model):
     title = models.CharField(max_length=100)
     description = models.TextField()
     datetime = models.DateTimeField(auto_now_add=True)
-    datetime_modified = models.DateTimeField(auto_now=True)
+
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
+    datetime_modified = models.DateTimeField(default=timezone.now)
 
     image = models.ImageField(verbose_name=_('Product_Image'), upload_to="product/product_cover" , blank=True)
 
@@ -41,7 +43,11 @@ class Comment(models.Model):
     body = models.TextField()
     author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name="comments", )
     stars = models.CharField(max_length=10, choices=PRODUCT_START)
-    datetime_modified = models.DateTimeField(auto_now=True)
+    #datetime_modified = models.DateTimeField(auto_now=True)
+
+    datetime_modified = models.DateTimeField(default=timezone.now)
+
+
     datetime = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
 

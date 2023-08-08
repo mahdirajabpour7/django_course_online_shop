@@ -51,8 +51,13 @@ INSTALLED_APPS = [
     'crispy_bootstrap5',
     'allauth',
     'allauth.account',
+    "jalali",
     "products",
     "cart.apps.CartConfig",
+    "django.contrib.humanize",
+    
+
+    'jalali_date',
 ]
 SITE_ID = 1
 
