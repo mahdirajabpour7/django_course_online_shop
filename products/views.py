@@ -1,11 +1,12 @@
 from django.db.transaction import commit
 from django.shortcuts import render , get_object_or_404 , reverse
 from django.views import generic
+from django.contrib import messages
 
 
 from .models import Products , Comment
 from .forms import CommentForm
-
+from cart.forms import AddToCart
 
 
 class ProductListView(generic.ListView):
@@ -13,6 +14,7 @@ class ProductListView(generic.ListView):
     queryset = Products.objects.filter(active=True)
     template_name = "Products/Products_list.html"
     context_object_name = "Products"
+
 
 
 class ProductDetailVeiw(generic.DetailView):
@@ -23,6 +25,7 @@ class ProductDetailVeiw(generic.DetailView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["comment_forms"] = CommentForm()
+        context["add_to_cart_form"] = AddToCart()
         return context
 
 
@@ -41,6 +44,10 @@ class CommentCreatView(generic.CreateView):
         pk = int(self.kwargs["pk"])
         product = get_object_or_404(Products, id=pk)
         obj.product = product
+
+
+        messages.success(self.request , "successfully created")
+
         return super().form_valid(form)
 
 

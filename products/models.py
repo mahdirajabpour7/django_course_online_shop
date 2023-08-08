@@ -1,6 +1,7 @@
 from django.db import models
 from django.shortcuts import reverse
 from django.contrib.auth import get_user_model
+from django.utils.translation import gettext_lazy as _
 
 
 class Products(models.Model):
@@ -10,6 +11,8 @@ class Products(models.Model):
     datetime_modified = models.DateTimeField(auto_now=True)
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
+
+    image = models.ImageField(verbose_name=_('Product_Image'), upload_to="product/product_cover" , blank=True)
 
     def __str__(self):
         return self.title
@@ -41,6 +44,8 @@ class Comment(models.Model):
     datetime_modified = models.DateTimeField(auto_now=True)
     datetime = models.DateTimeField(auto_now_add=True)
     active = models.BooleanField(default=True)
+
+
 
 
     object = models.Manager()
