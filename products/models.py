@@ -4,17 +4,25 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.utils import timezone
 
+from django_ckeditor_5.fields import CKEditor5Field
+from ckeditor.fields import RichTextField
+
+
 
 class Products(models.Model):
     title = models.CharField(max_length=100)
-    description = models.TextField()
+    description = RichTextField()
+
+
     datetime = models.DateTimeField(auto_now_add=True)
 
     price = models.PositiveIntegerField(default=0)
     active = models.BooleanField(default=True)
     datetime_modified = models.DateTimeField(default=timezone.now)
 
-    image = models.ImageField(verbose_name=_('Product_Image'), upload_to="product/product_cover" , blank=True)
+    short_description=models.TextField(blank=True)
+
+    image = models.ImageField(verbose_name=_('Product_Image'), upload_to="product/product_cover/" , blank=True)
 
     def __str__(self):
         return self.title
