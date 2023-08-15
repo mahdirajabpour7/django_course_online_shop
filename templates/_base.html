@@ -47,7 +47,7 @@
                         <div class="site-branding" style="margin-right: 30px;">
                             <a href="index.html" class="logo">
                                 <figure class="logo--normal d-none d-sm-block">
-                                    <img class="px-5" src="assets/img/codingyar_logo.png"
+                                    <img class="px-5" src="{% static "img/codingyar_logo.png"%}
                                          style="max-height: 50px; margin-bottom: -15px;" alt="Logo">
                                 </figure>
                             </a>
@@ -55,8 +55,9 @@
                         <div class="mainmenu-nav d-none d-lg-block w-100 pr-3">
                             <ul class="mainmenu d-lg-flex jusity-content-end jusity-content-lg-start pt-4">
                                 <li class="mainmenu__item menu-item-has-children active">
-                                    <a href="index.html" class="mainmenu__link">
-                                        <span class="mm-text">{% url "home" %}</span>
+                                    <a href="{% url "order_create" %}" class="btn btn-fullwidth btn-bg-sand">پرداخت</a>
+                                    <a href="{% url "product_list" %}" class="mainmenu__link">
+                                        <span class="mm-text">خانه</span>
                                     </a>
                                 </li>
                                 <li class="mainmenu__item menu-item-has-children">
@@ -157,6 +158,8 @@
 {% block content %}
 
 {% endblock %}
+
+{% include "footer.html" %}
 
 <!-- jQuery JS -->
 <script src="{% static "js/vendor.js" %}"></script>

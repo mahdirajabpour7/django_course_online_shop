@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "cart.apps.CartConfig",
     "django.contrib.humanize",
     'ckeditor',
+    "order",
 
 
     'jalali_date',

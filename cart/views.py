@@ -1,4 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.views.decorators.http import require_POST
+
 from .cart import Cart
 from products.models import Products
 from .forms import AddToCart
@@ -17,6 +19,7 @@ def cart_detail_view(request):
     return render(request, "cart/cart_detail.html",{
         "cart":cart,
         })
+@require_POST
 def add_to_cart_view(request, product_id):
     cart = Cart(request)
 
@@ -57,6 +60,21 @@ def remove_from_cart(request, product_id):
     messages.success(request, "removed product")
 
     return redirect("cart_detail_view")
+
+@require_POST
+def clear_cart(request):
+    cart = Cart(request)
+
+    if len(cart):
+        cart.clear()
+        messages.success(request, "سبد خرید خالی شد...")
+
+    else:
+        messages.success(request, "سبد خرید خالی است....")
+
+    return redirect("product_list")
+
+
 
 
 
