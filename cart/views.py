@@ -9,7 +9,7 @@ from django.contrib import messages
 def cart_detail_view(request):
     #return render(request, "cart/cart_detail.html",)
     cart = Cart(request)
-    print(len(cart))
+
     for item in cart:
         item["product_update_quantity_form"] = AddToCart(initial={
             "quantity": item["quantity"],

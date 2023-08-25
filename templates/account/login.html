@@ -4,16 +4,40 @@
 {% load crispy_forms_tags %}
 
 
+
 {% block page_title %}
    LOGIN
 {% endblock %}
 
 {% block content %}
-
-    <form action="" method="post">
+<div style="background-color: #333; color: #fff; padding: 10px; text-align: center;">
+    <h1>LOGIN</h1>
+</div>
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #ffffff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <form action="" method="post" style="text-align: center;">
         {% csrf_token %}
-        {{ form|crispy }}
-        <input type="submit" value="LOGIN">
+                {{ form|crispy }}
 
+            <input type="submit" value="LOGIN" style="background-color: #ff6600; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+        <a href="{% url 'account_reset_password' %}">Forgot password?</a>
+
+        </div>
     </form>
+</div>
 {% endblock %}
+
+
+
+{#{% block page_title %}#}
+{#   LOGIN#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <form action="" method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form|crispy }}#}
+{#        <input type="submit" value="LOGIN">#}
+{##}
+{#    </form>#}
+{#{% endblock %}#}

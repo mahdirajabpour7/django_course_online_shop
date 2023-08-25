@@ -17,7 +17,7 @@ class ProductCommentInline(ModelAdminJalaliMixin,admin.TabularInline):
 
 @admin.register(Products)
 class ProductAdmin(ModelAdminJalaliMixin,admin.ModelAdmin):
-    list_display = ["title", "price", "active",]
+    list_display = ["title", "price", "active", "status",]
     inlines = [
         ProductCommentInline,
     ]

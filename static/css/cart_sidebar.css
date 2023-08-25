@@ -1,0 +1,79 @@
+/* styles.css */
+
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* Mini Cart styles */
+.mini-cart {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    direction: rtl;
+}
+
+.mini-cart__heading {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.mini-cart__list {
+    list-style: none;
+}
+
+.mini-cart__product {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mini-cart__product__image img {
+    max-width: 50px;
+    height: auto;
+}
+
+.mini-cart__product__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mini-cart__product__quantity {
+    font-size: 14px;
+    color: #555;
+}
+
+.mini-cart__total {
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.mini-cart__buttons a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f39c12;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.remove-product {
+    color: #c0392b;
+    margin-left: 10px;
+}

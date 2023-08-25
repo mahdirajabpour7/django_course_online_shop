@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     "django.contrib.humanize",
     'ckeditor',
     "order",
+    "payment",
+    "Favorites",
 
 
     'jalali_date',
@@ -173,14 +175,19 @@ AUTH_USER_MODEL = "accounts.CustomUser"
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+ACCOUNT_SIGNUP_REDIRECT_URL = 'home'
+
 
 # CRISPY
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 # all auth
-# ACCOUNT_SESSION-REMEMBER == True
-ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_UNIQUE_EMAIL = True
+#ACCOUNT_SESSION-REMEMBER == True
+CCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_UNIQUE_EMAIL = False
+ACCOUNT_USERNAME_REQUIRED = True
+ACCOUNT_SESSION_REMEMBER = True
+
+

@@ -1,0 +1,155 @@
+/* styles.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li, a {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f6f6f6;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-content-wrapper {
+    padding: 20px;
+}
+
+.shop-page-wrapper {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.shop-toolbar {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.product-pages {
+    font-size: 14px;
+    color: #666;
+}
+
+.shop-products {
+    margin-top: 20px;
+}
+
+.xxl-block-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+}
+
+.ShoppingYar-product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.product-inner {
+    text-align: center;
+}
+
+.product-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+.product-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.product-price-wrapper {
+    margin-bottom: 15px;
+}
+
+.product-price-wrapper .money {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.product-info form {
+    margin-top: 10px;
+}
+
+.quantity-input {
+    width: 50px;
+}
+
+.btn-small {
+    font-size: 12px;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+/* Pagination */
+.pagination-wrap {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.pagination {
+    list-style: none;
+    display: inline-block;
+    padding: 0;
+}
+
+.page-number {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 3px 7px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #333;
+}
+
+.current {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Cart sidebar */
+/* Define your cart sidebar styles here */
+
+/* Global overlay */
+.ShoppingYar-global-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    display: none;
+}

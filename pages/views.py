@@ -9,3 +9,6 @@ class HomePagesView(TemplateView):
 
 class AboutUsView(TemplateView):
     template_name = "pages/aboutsus.html"
+
+class UpdatePageView(TemplateView):
+    template_name = "pages/update.html"

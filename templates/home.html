@@ -6,6 +6,108 @@ HOME PAGE
 
 {% block content%}
 
-    <H1>HOME PAGE</H1>
+   <!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store - Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .navbar {
+            background-color: #ff6600;
+            overflow: hidden;
+        }
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ff8533;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .featured-products {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .product {
+            width: 48%;
+            background-color: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 4px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product-info {
+            padding: 10px;
+        }
+        .product-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .product-price {
+            color: #ff6600;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Our Online Store</h1>
+    </div>
+    <div class="navbar">
+        <a href="#">Home</a>
+        <a href="#">Products</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </div>
+    <div class="container">
+        <h2>Featured Products</h2>
+        <div class="featured-products">
+            <div class="product">
+                <img src="product1.jpg" alt="Product 1">
+                <div class="product-info">
+                    <h3 class="product-title">Product 1</h3>
+                    <p class="product-price">$29.99</p>
+                </div>
+            </div>
+            <div class="product">
+                <img src="product2.jpg" alt="Product 2">
+                <div class="product-info">
+                    <h3 class="product-title">Product 2</h3>
+                    <p class="product-price">$39.99</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
 
 {% endblock %}

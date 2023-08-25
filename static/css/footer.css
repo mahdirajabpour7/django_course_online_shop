@@ -1,0 +1,33 @@
+/* styles.css */
+
+/* Footer styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+}
+
+.footer-widget {
+    margin-bottom: 20px;
+}
+
+.textwidget img {
+    max-width: 78px;
+    height: auto;
+}
+
+.footer-menu li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-text {
+    font-size: 14px;
+    opacity: 0.7;
+}

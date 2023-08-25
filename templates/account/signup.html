@@ -2,19 +2,66 @@
 
 {% load crispy_forms_tags %}
 
-
-
-
 {% block page_title %}
-    SING UP
+   SIGN UP
 {% endblock %}
 
 {% block content %}
-
-    <form action="" method="post">
+<div style="background-color: #333; color: #fff; padding: 10px; text-align: center;">
+    <h1>SIGN UP</h1>
+</div>
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #ffffff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <form action="" method="post" style="text-align: center;">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="SIGNUP">
-
+        <div style="margin-bottom: 10px;">
+            <label for="{{ form.username.id_for_label }}">Username:</label>
+            {{ form.username }}
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="{{ form.email.id_for_label }}">Email:</label>
+            {{ form.email }}
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="{{ form.password1.id_for_label }}">Password:</label>
+            {{ form.password1 }}
+        </div>
+        <div style="margin-bottom: 10px;">
+            <label for="{{ form.password2.id_for_label }}">Confirm Password:</label>
+            {{ form.password2 }}
+        </div>
+        <div>
+            <input type="submit" value="SIGN UP" style="background-color: #ff6600; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
+        </div>
     </form>
+</div>
 {% endblock %}
+
+
+
+
+
+
+
+
+
+
+{#{% extends "_base.html" %}#}
+{##}
+{#{% load crispy_forms_tags %}#}
+{##}
+{##}
+{##}
+{##}
+{#{% block page_title %}#}
+{#    SING UP#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{##}
+{#    <form action="" method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form|crispy }}#}
+{#        <input type="submit" value="SIGNUP">#}
+{##}
+{#    </form>#}
+{#{% endblock %}#}

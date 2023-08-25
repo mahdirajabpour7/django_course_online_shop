@@ -1,6 +1,26 @@
 {% extends "_base.html" %}
 
+{% load static %}
+
+<link rel="stylesheet" href="{% static "css/aboutsus.css" %}">
+
 {% block content %}
-    <h1>about as</h1>
+    <link rel="stylesheet" href="{% static "css/aboutsus.css" %}">
+
+    <div class="container">
+        <h1 class="title">سازندگان وبسایت</h1>
+        <div class="developer">
+            <img src="developer1.jpg" alt="Developer 1">
+            <h2>نام و نام خانوادگی</h2>
+            <p>توضیحات و اطلاعات مربوط به اولین سازنده وبسایت</p>
+        </div>
+        <div class="developer">
+            <img src="{% static 'img/das.jpg' %}" alt="Developer 2">
+            <h2>نام و نام خانوادگی</h2>
+            <p>توضیحات و اطلاعات مربوط به دومین سازنده وبسایت</p>
+        </div>
+    </div>
+
+
 
 {% endblock %}

@@ -1,0 +1,19 @@
+/* Custom CSS file */
+
+/* Product card */ .card { border: 1px solid #ddd; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); transition: all 0.3s ease; }
+
+/* Product card hover effect */ .card:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
+
+/* Product title */ .card h3 { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 10px; }
+
+/* Product price */ .card p { font-size: 16px; color: #666; margin-bottom: 10px; }
+
+/* Product link */ .card a { font-size: 14px; color: #007bff; text-decoration: none; }
+
+/* Delete icon */ .card i { font-size: 20px; color: #dc3545; float: right; }
+
+/* Pagination */ .pagination { display: flex; justify-content: center; align-items: center; margin-top: 20px; }
+
+/* Pagination link */ .pagination a { display: block; width: 40px; height: 40px; line-height: 40px; text-align: center; font-size: 16px; color: #333; border: 1px solid #ddd; border-radius: 5px; margin-left: 5px; margin-right: 5px; }
+
+/* Pagination link hover effect */ .pagination a:hover { background-color: #007bff; color: #fff; }

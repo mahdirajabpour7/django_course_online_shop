@@ -1,20 +1,41 @@
 {% extends "_base.html" %}
 
-
-
-
-
 {% block page_title %}
    LOGOUT
 {% endblock %}
 
 {% block content %}
-    <H1>LOG OUT.....</H1>
-
-    <form action="" method="post">
+<div style="background-color: #333; color: #fff; padding: 10px; text-align: center;">
+    <h1>LOG OUT</h1>
+</div>
+<div style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #ffffff; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+    <div style="text-align: center;">
+        <h1>LOG OUT</h1>
+    </div>
+    <form action="" method="post" style="text-align: center;">
         {% csrf_token %}
-        {{ form }}
-        <input type="submit" value="ARE YOU SURE??">
-
+        {{ form.as_p }}
+        <input type="submit" value="ARE YOU SURE??" style="background-color: #ff6600; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer;">
     </form>
+</div>
 {% endblock %}
+
+
+
+
+
+
+{#{% block page_title %}#}
+{#   LOGOUT#}
+{#{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <H1>LOG OUT.....</H1>#}
+{##}
+{#    <form action="" method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form }}#}
+{#        <input type="submit" value="ARE YOU SURE??">#}
+{##}
+{#    </form>#}
+{#{% endblock %}#}
